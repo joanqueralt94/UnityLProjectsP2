@@ -22,9 +22,9 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void AnimalFeed()
+    public void AnimalFeed(int value)
     {
-        ++playerScore;
+        playerScore += value;
         Debug.Log("Score = " + playerScore);
     }
 

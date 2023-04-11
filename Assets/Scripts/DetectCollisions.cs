@@ -29,8 +29,10 @@ public class DetectCollisions : MonoBehaviour
         }        
         else if(col.GetComponent<Collider>().tag == "Food")
         {
-            controller.GetComponent<GameController>().AnimalFeed();
-            Destroy(gameObject);
+            //controller.GetComponent<GameController>().AnimalFeed();
+            col.GetComponent<AnimalHunger>().FeedAnimal(1);
+            //Destroy(gameObject);
+
             Destroy(col.gameObject);
         }
     }
