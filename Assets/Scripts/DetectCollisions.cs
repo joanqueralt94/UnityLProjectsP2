@@ -17,9 +17,17 @@ public class DetectCollisions : MonoBehaviour
     }
 
     //Detect collision between two colliders and Destroys it
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider col)
     {
-        Destroy(gameObject);
-        Destroy(other.gameObject);
+        if(col.GetComponent<Collider>().tag == "Player")
+        {
+            Debug.Log("Game Over");   
+        }        
+        else if(col.GetComponent<Collider>().tag == "Food")
+        {
+            Destroy(gameObject);
+            Destroy(col.gameObject);
+        }
     }
+
 }
