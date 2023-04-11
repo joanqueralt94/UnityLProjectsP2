@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public int playerLives = 3;
+    public int playerLifes = 3;
     public int playerScore = 0;
 
     public GameObject player;
@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        Debug.Log("Lives = " +  playerLives);
+        Debug.Log("Lives = " +  playerLifes);
     }
 
     // Update is called once per frame
@@ -30,12 +30,12 @@ public class GameController : MonoBehaviour
 
     public void AnimalHit()
     {
-        if (playerLives > 0)
+        if (playerLifes > 0)
         {
-            --playerLives;
-            Debug.Log("Lives = " + playerLives);
+            --playerLifes;
+            Debug.Log("Lives = " + playerLifes);
 
-            if (playerLives < 1)
+            if (playerLifes < 1)
             {
                 Destroy(player);
                 Debug.Log("Game Over!");
